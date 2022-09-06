@@ -18,7 +18,9 @@
   <div class="flex items-center justify-between w-full py-6">
     <!-- Logo -->
     <div>
-      <img src="/images/logo.svg" alt="Sunnyside Logo" />
+      <div class="text-white font-black text-2xl md:text-4xl tracking-wide">
+        sunnyside
+      </div>
     </div>
     <!-- Hamburger -->
     <div

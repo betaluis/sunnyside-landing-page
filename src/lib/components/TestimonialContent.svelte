@@ -6,7 +6,7 @@
   <div class="w-28 h-28 rounded-full overflow-hidden">
     <img src={testimonial.image} alt="Portrait" />
   </div>
-  <p class="font-medium text-lg leading-8 text-project-darker-blue">{testimonial.content}</p>
+  <p class="font-medium text-lg leading-8 text-project-darker-blue max-w-md">{testimonial.content}</p>
   <div class="-mt-3">
     <h4 class="text-xl font-fraunces font-black text-project-dark-blue">
       {testimonial.name}

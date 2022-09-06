@@ -21,7 +21,7 @@
   <li class="py-4 bg-project-primary-yellow text-lg px-12 rounded-full">
     <a href="/contact" class="uppercase font-medium">Contact</a>
   </li>
-  <div on:click={closeMenu} class="absolute top-2 right-2 z-20">
-    <Icon icon="bi:x" class="text-black text-4xl font-bold z-20" />
+  <div on:click={closeMenu} class="absolute top-2 right-2 z-50">
+    <Icon icon="bi:x" class="text-black text-4xl font-bold z-50" />
   </div>
 </ul>

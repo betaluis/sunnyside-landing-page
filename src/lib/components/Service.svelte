@@ -3,22 +3,25 @@
   import CardContent from "./CardContent.svelte";
 
   export let service;
-  let backgroundImg = service.mobileImg;
+  export let width;
+  $: backgroundImg = width > 430 ? service.desktopImg : service.mobileImg;
 </script>
 
 <div
   style="--img: url('{backgroundImg}')"
-  class="backgroundImage h-[600px] flex justify-center items-end gutter"
+  class="backgroundImage h-[600px] md:h-[700px] flex justify-center items-end gutter"
 >
-  <RevealOnScroll>
-    <div class="py-16">
-      <CardContent
-        theme={service.colorTheme}
-        title={service.title}
-        content={service.content}
-      />
-    </div>
-  </RevealOnScroll>
+  <div class="md:self-start md:mt-96">
+    <RevealOnScroll>
+      <div class="py-16 max-w-sm">
+        <CardContent
+          theme={service.colorTheme}
+          title={service.title}
+          content={service.content}
+        />
+      </div>
+    </RevealOnScroll>
+  </div>
 </div>
 
 <style>
@@ -27,5 +30,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  @media screen and (min-width: 430px) {
+    .backgroundImage {
+      background-position: top;
+      background-size: cover;
+    }
   }
 </style>

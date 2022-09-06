@@ -2,6 +2,7 @@
   export let title;
   export let content;
   export let theme;
+  export let align;
   let color;
 
   $: if (theme === "green") color = "text-project-primary-cyan";
@@ -9,16 +10,18 @@
 </script>
 
 <h2
-  class={`font-fraunces font-black text-3xl text-center mb-6 ${
-    color ? color : "text-project-dark-blue"
-  }`}
+  class={`font-fraunces font-black text-3xl mb-6 
+    ${color ? color : "text-project-dark-blue"} 
+    ${align === "left" ? "text-left" : "text-center"}
+  `}
 >
   {title}
 </h2>
 <p
-  class={`text-center ${
-    color ? color : "text-project-darkest-blue"
-  } font-medium text-base leading-7`}
+  class={`font-medium text-base leading-7 md:max-w-md
+    ${color ? color : "text-project-darkest-blue"} 
+    ${align === "left" ? "text-left" : "text-center"}
+  `}
 >
   {content}
 </p>

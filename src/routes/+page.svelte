@@ -5,6 +5,8 @@
   import Testimonial from "$lib/components/Testimonial.svelte";
 
   export let data;
+  
+  let width;
 
   const scrollToElement = (selector) => {
     const elementTo = document.querySelector(selector);
@@ -20,25 +22,31 @@
   };
 </script>
 
-<section class="relative min-h-[620px] w-full bg-contain bg-no-repeat z-40">
+<svelte:window bind:innerWidth={width} />
+
+<section
+  class="relative min-h-[620px] md:min-h-screen w-full bg-contain bg-no-repeat z-40"
+>
   <img
-    src="/images/mobile/image-header.jpg"
-    class="absolute -z-[100] object-cover h-full"
+    src={width > 430
+      ? "/images/desktop/image-header.jpg"
+      : "/images/mobile/image-header.jpg"}
+    class="absolute -z-[100] object-cover w-full h-full"
     alt="An orange"
   />
   <div class="gutter flex flex-col justify-center items-center">
     <h1
-      class="z-20 mt-[80px] pt-20 pb-16  text-white text-4xl text-center uppercase font-fraunces tracking-[0.5rem] font-black"
+      class="z-20 mt-[80px] pt-20 lg:pt-32 pb-16  text-white text-4xl md:text-5xl lg:text-6xl text-center uppercase font-fraunces tracking-[0.5rem] font-black"
     >
       we are creatives
     </h1>
-    <div class="z-50">
+    <div class="z-30 lg:mt-16">
       <a
         href={"#"}
-        class="z-50"
+        class={`z-30`}
         on:click|preventDefault={() => scrollToElement("#section1")}
       >
-        <img src="/images/icon-arrow-down.svg" alt="Arrow down" class="h-36" />
+        <img src="/images/icon-arrow-down.svg" alt="Arrow down" class="h-36 lg:h-44" />
       </a>
     </div>
   </div>
@@ -46,22 +54,28 @@
 
 <!-- Features -->
 {#each data.features as feature (feature.title)}
-  <section id={"section" + feature.id}>
-    <Feature {feature} />
+  <section id={"section" + feature.id} class="max-w-[1680px] mx-auto">
+    {#if (data.features.indexOf(feature) % 2 === 0)}
+      <Feature {width} {feature} />
+    {:else}
+      <Feature {width} {feature} reverse={true} />
+    {/if}
   </section>
 {/each}
 
 <!-- Services -->
-{#each data.services as service (service.id)}
-  <section id={"service-section" + service.id}>
-    <Service {service} />
-  </section>
-{/each}
+<div class="md:flex max-w-[1680px] mx-auto">
+  {#each data.services as service (service.id)}
+    <section id={"service-section" + service.id} class="flex-1">
+      <Service {service} {width} />
+    </section>
+  {/each}
+</div>
 
 <section>
   <Testimonial testimonials={data.testimonials} />
 </section>
 
 <section>
-  <Gallery images={data.gallery} />
+  <Gallery images={data.gallery} {width} />
 </section>

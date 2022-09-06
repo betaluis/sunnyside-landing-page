@@ -70,22 +70,26 @@ export function load() {
 
   const gallery = [
     {
-      path: '/images/mobile/image-gallery-milkbottles.jpg',
+      desktopImagePath: '/images/desktop/image-gallery-milkbottles.jpg',
+      mobileImagePath: '/images/mobile/image-gallery-milkbottles.jpg',
       alt: 'Milk bottles',
       id: 1,
     },
     {
-      path: '/images/mobile/image-gallery-orange.jpg',
+      desktopImagePath: '/images/desktop/image-gallery-orange.jpg',
+      mobileImagePath: '/images/mobile/image-gallery-orange.jpg',
       alt: 'Orange',
       id: 2,
     },
     {
-      path: '/images/mobile/image-gallery-cone.jpg',
+      desktopImagePath: '/images/desktop/image-gallery-cone.jpg',
+      mobileImagePath: '/images/mobile/image-gallery-cone.jpg',
       alt: 'Cone',
       id: 3,
     },
     {
-      path: '/images/mobile/image-gallery-sugar-cubes.jpg',
+      desktopImagePath: '/images/desktop/image-gallery-sugarcubes.jpg',
+      mobileImagePath: '/images/mobile/image-gallery-sugar-cubes.jpg',
       alt: 'Sugar cubes',
       id: 4,
     },
