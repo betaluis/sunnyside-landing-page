@@ -1,0 +1,25 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    width: 100%;
+  }
+  .no-scroll {
+    overflow: hidden;
+  }
+  .noscroll {
+    overflow: hidden;
+  }  
+  .noclick {
+    pointer-events: none;
+  }
+  .gutter {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
