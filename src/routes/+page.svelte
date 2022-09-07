@@ -55,7 +55,7 @@
 <!-- Features -->
 {#each data.features as feature (feature.title)}
   <section id={"section" + feature.id} class="max-w-[1680px] mx-auto">
-    {#if (data.features.indexOf(feature) % 2 === 0)}
+    {#if (data.features.indexOf(feature) % 2 !== 0)}
       <Feature {width} {feature} />
     {:else}
       <Feature {width} {feature} reverse={true} />

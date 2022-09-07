@@ -10,7 +10,7 @@
 </script>
 
 <h2
-  class={`font-fraunces font-black text-3xl mb-6 
+  class={`font-fraunces font-black text-3xl lg:text-4xl mb-6 
     ${color ? color : "text-project-dark-blue"} 
     ${align === "left" ? "text-left" : "text-center"}
   `}

@@ -18,7 +18,7 @@
     />
   </div>
   <div class="gutter py-16 flex flex-col w-full justify-center items-center md:w-1/2">
-    <div class="max-w-xs">
+    <div class="max-w-[400px]">
       <CardContent align={width > 768 ? 'left' : ''} title={feature.title} content={feature.content} />
     <div class="flex flex-col">
       <a
