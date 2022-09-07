@@ -1,4 +1,5 @@
 <script>
+  import { fly } from 'svelte/transition';
 
   // Components
   import Menu from "./Menu.svelte";
@@ -8,7 +9,6 @@
   export let topNavIsActive;
   export let handleMenu;
   export let closeMenu;
-
 </script>
 
 <nav
@@ -27,19 +27,19 @@
       class={`transition-all ${
         topNavIsActive === true ? "hamburger-transition noclick" : ""
       }`}
-      on:click={() => handleMenu('top')}
+      on:click={() => handleMenu("top")}
     >
       <Icon icon="bytesize:menu" class={`text-white text-3xl`} />
     </div>
   </div>
 
-
-
   <!-- Mobile Menu -->
- {#if topNavIsActive === true}
-  <div class="z-50 w-full relative ">
-    <Menu {closeMenu} />
-  </div>
+  {#if topNavIsActive === true}
+    <div class="absolute top-0 left-0 w-screen h-screen bg-black/25" transition:fly on:click|self={closeMenu}>
+      <div class="z-50 ml-5 mr-5 mt-20 relative" on:click|self={closeMenu}>
+        <Menu {closeMenu} />
+      </div>
+    </div>
   {/if}
 </nav>
 
