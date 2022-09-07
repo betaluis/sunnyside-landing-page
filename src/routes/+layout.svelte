@@ -42,12 +42,12 @@
 
 <svelte:window bind:innerWidth={width} />
 
-<div>
+<div> 
   <Navbar {topNavIsActive} {closeMenu} {handleMenu} />
   <div class="relative">
     <FloaingHamburger {handleMenu} {floatingNavIsActive} {closeMenu} />
   </div>
-  <div class:blur={floatingNavIsActive}>
+  <div class:blur={floatingNavIsActive || topNavIsActive}>
     <slot {topNavIsActive} />
   </div>
   <footer>

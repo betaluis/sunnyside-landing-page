@@ -15,7 +15,7 @@
   id="navbar"
   class="z-50 flex flex-col items-center absolute top-0 left-0 gutter w-full"
 >
-  <div class="flex items-center justify-between w-full py-6">
+  <div class:blur={topNavIsActive} class="flex items-center justify-between w-full py-6">
     <!-- Logo -->
     <div>
       <div class="text-white font-black text-2xl md:text-4xl tracking-wide">
