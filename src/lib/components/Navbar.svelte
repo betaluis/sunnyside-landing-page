@@ -14,7 +14,7 @@ import ContactButton from './ContactButton.svelte';
 
 <nav
   id="navbar"
-  class="z-50 flex flex-col items-center absolute top-0 left-0 gutter w-full"
+  class="z-50 flex flex-col items-center absolute top-0 left-0 gutter w-full xl:top-4"
 >
   <div class:blur={topNavIsActive} class="flex items-center justify-between w-full py-6 lg:px-8">
     <!-- Logo -->

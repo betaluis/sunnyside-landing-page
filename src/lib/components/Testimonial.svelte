@@ -5,7 +5,7 @@
   export let testimonials;
 </script>
 
-<div class="gutter py-16 md:pt-16 md:pb-32">
+<div class="gutter py-16 md:pt-16 md:pb-32 lg:pt-44 lg:pb-64 xl:pb-80 xl:py-64">
   <h3
     class="text-center text-project-gray-blue text-lg font-black font-fraunces uppercase tracking-[0.25rem] md:py-10 md:text-2xl"
   >

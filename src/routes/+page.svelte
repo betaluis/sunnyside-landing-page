@@ -1,11 +1,13 @@
 <script>
+  import { fly } from "svelte/transition";
+
   import Feature from "$lib/components/Feature.svelte";
   import Gallery from "$lib/components/Gallery.svelte";
   import Service from "$lib/components/Service.svelte";
   import Testimonial from "$lib/components/Testimonial.svelte";
 
   export let data;
-  
+
   let width;
 
   const scrollToElement = (selector) => {
@@ -37,7 +39,7 @@
   />
   <div class="gutter flex flex-col justify-center items-center">
     <h1
-      class="z-20 mt-[80px] pt-20 lg:pt-32 pb-16  text-white text-4xl md:text-5xl lg:text-6xl text-center uppercase font-fraunces tracking-[0.5rem] font-black"
+      class="z-20 mt-[80px] pt-20 lg:pt-44 pb-16  text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center uppercase font-fraunces tracking-[0.5rem] font-black"
     >
       we are creatives
     </h1>
@@ -47,7 +49,11 @@
         class={`z-30`}
         on:click|preventDefault={() => scrollToElement("#section1")}
       >
-        <img src="/images/icon-arrow-down.svg" alt="Arrow down" class="h-36 lg:h-44" />
+        <img
+          src="/images/icon-arrow-down.svg"
+          alt="Arrow down"
+          class="h-36 lg:h-44 motion-safe:animate-bounce"
+        />
       </a>
     </div>
   </div>
@@ -55,8 +61,8 @@
 
 <!-- Features -->
 {#each data.features as feature (feature.title)}
-  <section id={"section" + feature.id} class="max-w-[1680px] mx-auto">
-    {#if (data.features.indexOf(feature) % 2 !== 0)}
+  <section id={"section" + feature.id} class="max-w-[1960px] mx-auto">
+    {#if data.features.indexOf(feature) % 2 !== 0}
       <Feature {width} {feature} />
     {:else}
       <Feature {width} {feature} reverse={true} />
@@ -65,7 +71,7 @@
 {/each}
 
 <!-- Services -->
-<div class="md:flex max-w-[1680px] mx-auto">
+<div class="md:flex max-w-[1960px] mx-auto">
   {#each data.services as service (service.id)}
     <section id={"service-section" + service.id} class="flex-1">
       <Service {service} {width} />
@@ -80,3 +86,6 @@
 <section>
   <Gallery images={data.gallery} {width} />
 </section>
+
+<style>
+</style>
