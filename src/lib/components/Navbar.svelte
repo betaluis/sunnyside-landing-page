@@ -4,6 +4,7 @@
   // Components
   import Menu from "./Menu.svelte";
   import Icon from "@iconify/svelte";
+import ContactButton from './ContactButton.svelte';
 
   // Variables
   export let topNavIsActive;
@@ -15,7 +16,7 @@
   id="navbar"
   class="z-50 flex flex-col items-center absolute top-0 left-0 gutter w-full"
 >
-  <div class:blur={topNavIsActive} class="flex items-center justify-between w-full py-6">
+  <div class:blur={topNavIsActive} class="flex items-center justify-between w-full py-6 lg:px-8">
     <!-- Logo -->
     <div>
       <div class="text-white font-black text-2xl md:text-4xl tracking-wide">
@@ -24,13 +25,19 @@
     </div>
     <!-- Hamburger -->
     <div
-      class={`transition-all ${
+      class={`transition-all md:hidden ${
         topNavIsActive === true ? "hamburger-transition noclick" : ""
       }`}
       on:click={() => handleMenu("top")}
     >
       <Icon icon="bytesize:menu" class={`text-white text-3xl`} />
     </div>
+    <ul class="hidden md:flex items-center space-x-10 text-white font-medium text-lg">
+      <li><a href="/">About</a></li>
+      <li><a href="/">Services</a></li>
+      <li><a href="/">Projects</a></li>
+      <ContactButton type={'secondary'} />
+    </ul>
   </div>
 
   <!-- Mobile Menu -->

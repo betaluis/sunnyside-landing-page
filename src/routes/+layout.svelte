@@ -44,7 +44,7 @@
 
 <div> 
   <Navbar {topNavIsActive} {closeMenu} {handleMenu} />
-  <div class="relative">
+  <div class="relative md:hidden">
     <FloaingHamburger {handleMenu} {floatingNavIsActive} {closeMenu} />
   </div>
   <div class:blur={floatingNavIsActive || topNavIsActive}>

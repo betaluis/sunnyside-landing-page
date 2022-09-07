@@ -24,6 +24,7 @@
 
 <svelte:window bind:innerWidth={width} />
 
+<!-- Header -->
 <section
   class="relative min-h-[620px] md:min-h-screen w-full bg-contain bg-no-repeat z-40"
 >
