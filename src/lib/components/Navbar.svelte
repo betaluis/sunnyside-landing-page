@@ -4,7 +4,7 @@
   // Components
   import Menu from "./Menu.svelte";
   import Icon from "@iconify/svelte";
-import ContactButton from './ContactButton.svelte';
+  import ContactButton from './ContactButton.svelte';
 
   // Variables
   export let topNavIsActive;
